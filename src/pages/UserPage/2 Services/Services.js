@@ -1,8 +1,8 @@
 import React from 'react'
 
-const Services = () => {
+const Services = ({services}) => {
   return (
-    <div className='grid grid-cols-4 mt-24 px-36'>
+    <div ref={services} className='grid grid-cols-4 mt-24 px-36'>
       <div className='flex flex-row'><i class="fa-solid fa-cart-shopping mr-4 py-[6px]"></i><div><p>FREE DELIVERY</p><p>Consectetur adipi elit lorem ipsum dolor sit amet.</p></div></div>
 
       <div  className='flex flex-row'><i class="fa-solid fa-medal mr-4 py-[6px]"></i><div><p>QUALITY GUARANTEE</p><p>Dolor sit amet orem ipsu mcons ectetur adipi elit.</p></div></div>

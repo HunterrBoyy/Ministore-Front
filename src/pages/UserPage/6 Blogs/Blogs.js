@@ -7,7 +7,7 @@ import { useFormik } from 'formik';
 import { toast } from 'react-toastify';
 
 
-const Blogs = () => {
+const Blogs = ({blog}) => {
   const settings = {
     dots: true,
     infinite: true,
@@ -36,7 +36,7 @@ const Blogs = () => {
   }) 
 
   return (
-    <div className='mx-24 mt-24'>
+    <div ref={blog} className='mx-24 mt-24'>
     <div className='flex flex-row justify-between items-center'>
         <p className='font-medium text-[30px]'>LATEST POSTS</p>
         <p className='underline underline-offset-2' >READ BLOGS</p>

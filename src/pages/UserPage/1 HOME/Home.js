@@ -2,13 +2,13 @@ import React from 'react'
 import './home.css'
 import { Carousel } from "@material-tailwind/react";
 
-const Home = () => {
+const Home = ({home}) => {
 
   return (
 
   <>
   
-<Carousel className="rounded-xl">
+<Carousel ref={home} className="rounded-xl">
       
     <div className='flex px-9 bg-[#EDF1F3] ' >
       <div className='child-1 px-20' >

@@ -2,6 +2,14 @@ import React, { useRef, useState } from 'react'
 import { useDispatch, } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { removeUserSession } from '../features/userSlice'
+import Home from '../pages/UserPage/1 HOME/Home'
+import Services from '../pages/UserPage/2 Services/Services'
+import Products from '../pages/UserPage/3 Products/Products'
+import Watches from '../pages/UserPage/4 Watches/Watches'
+import Blogs from '../pages/UserPage/6 Blogs/Blogs'
+import Sale from '../pages/UserPage/5 Sale/Sale'
+import InstaPage from '../pages/UserPage/7 Shop with Insta/InstaPage'
+import Footer from './Footer'
 
 const Header = () => {
 
@@ -30,15 +38,17 @@ const blog = useRef(null);
   
 
   return (
+    <>
+    
     <div className='flex flex-row justify-between px-10 py-5 bg-[#F8F9FA] sticky top-0 z-10'>
       <img src="https://themewagon.github.io/MiniStore/images/main-logo.png" alt="" />
   <nav className='flex flex-row gap-8'>
-    <p onClick={() => scrollToSection(home)}>HOME</p>
-    <p onClick={() => scrollToSection(services)}>SERVICES</p>
-    <p onClick={() => scrollToSection(products)}>PRODUCTS</p>
-    <p onClick={() => scrollToSection(watches)}>WATCHES</p>
-    <p onClick={() => scrollToSection(sale)}>SALE</p>
-    <p onClick={() => scrollToSection(blog)}>BLOGS</p>
+    <p className='cursor-pointer'  onClick={() => scrollToSection(home)}>HOME</p>
+    <p className='cursor-pointer' onClick={() => scrollToSection(services)}>SERVICES</p>
+    <p className='cursor-pointer' onClick={() => scrollToSection(products)}>PRODUCTS</p>
+    <p className='cursor-pointer' onClick={() => scrollToSection(watches)}>WATCHES</p>
+    <p className='cursor-pointer' onClick={() => scrollToSection(sale)}>SALE</p>
+    <p className='cursor-pointer' onClick={() => scrollToSection(blog)}>BLOGS</p>
     <p onClick={() => setPageOpen(!pageOpen)} className='cursor-pointer'>PAGES</p>
     {
     pageOpen && (
@@ -121,6 +131,15 @@ const blog = useRef(null);
   </div>
   
     </div>
+    <Home home={home} />
+     <Services services={services} />
+     <Products products={products} />
+     <Watches watches={watches} />
+     <Sale sale={sale} />
+     <Blogs blog={blog} />
+     <InstaPage />
+     <Footer />
+    </>
   )
 }
 

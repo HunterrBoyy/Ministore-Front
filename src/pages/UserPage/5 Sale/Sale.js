@@ -1,9 +1,9 @@
 import React from 'react'
 import './sale.css'
 
-const Sale = () => {
+const Sale = ({sale}) => {
   return (
-    <div className='flex  bg-[#EDF1F3] mt-24' >
+    <div ref={sale} className='flex  bg-[#EDF1F3] mt-24' >
     <div className='pl-56 flex flex-col justify-center' >
       <p>10% off</p>
       <p className='text-[80px] font-light'>NEW YEAR SALE</p> 
