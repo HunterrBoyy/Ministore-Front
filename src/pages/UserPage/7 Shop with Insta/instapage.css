@@ -1,0 +1,24 @@
+.container:hover {
+  cursor: pointer;
+}
+
+.icon {
+
+  bottom: 100px;
+  position: relative;
+  visibility: hidden;
+  transition: .5s;
+  color: white;
+  margin-left: 40%;
+  opacity: 1;
+  
+
+}
+
+
+.container:hover .icon{
+  bottom: 120px;
+  visibility: visible;
+  opacity: 1; 
+}
+

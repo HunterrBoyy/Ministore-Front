@@ -1,0 +1,29 @@
+.card:hover{
+  cursor: pointer;
+}
+
+.cart-button{
+  
+  bottom: 80px;
+  position:absolute;
+ visibility: hidden;
+ transition: 0.5s;
+ width: 240px;
+ background: black;
+ color: white;
+ height: 42px;
+ border-radius: 5px;
+margin-left: 15px;
+opacity: 0;
+}
+
+
+.card:hover .cart-button{
+  bottom: 80px;
+  visibility: visible;
+  opacity: 1; 
+}
+
+.cart-button:hover {
+  background-color:rgb(9, 155, 155) ;
+}
