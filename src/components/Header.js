@@ -1,7 +1,7 @@
 import React, { useRef, useState } from 'react'
 import { useDispatch, } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { removeUserSession } from '../features/userSlice'
+import { clearAll } from '../features/userSlice'
 import Home from '../pages/UserPage/1 HOME/Home'
 import Services from '../pages/UserPage/2 Services/Services'
 import Products from '../pages/UserPage/3 Products/Products'
@@ -114,7 +114,7 @@ const blog = useRef(null);
       <li 
       onClick={() => {
         setOpen(false);
-        dispatch(removeUserSession()); 
+        dispatch(clearAll()); 
         nav('/user/login', {replace: true});
       }}
        className='p-2 text-lg cursor-pointer rounded hover:bg-blue-100 '><i class="fa-solid fa-arrow-right-from-bracket"></i> LogOut</li>

@@ -13,7 +13,7 @@ const App = () => {
   return (
     <>
     <Routes>
-          <Route index element={<Header />} />
+          <Route path='/' index element={<Header />} />
           
 
         <Route element={<UserRoute />}>
@@ -21,7 +21,15 @@ const App = () => {
           <Route path="user/Login" element={<Login />} />
           <Route path="user/SignUp" element={<SignUp />} />
         </Route>
-        
+
+        {/* <Route element={<RouteUser />}>
+            <Route path='user/cart' element={<CartPage />} />
+            <Route path='user/shipping' element={<Shipping />} />
+            <Route path='/user/checkout' element={<OrderPage />} />
+            <Route path='/user/profile' element={<UserProfile />} />
+            <Route path='/user/order/:id' element={<OrderDetail />} />
+          </Route> */}
+
        
       </Routes>
       
