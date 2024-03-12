@@ -13,7 +13,7 @@ import Footer from './Footer'
 
 const Header = () => {
 
-
+// yo page ma maile data haru backend bata tanera product ra watches ma data pathayera, data haru milauna baki xa 
   const nav = useNavigate()
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false)

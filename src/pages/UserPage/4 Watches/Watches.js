@@ -4,6 +4,7 @@ import Slider from 'react-slick'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './watches.css'
+import { useNavigate } from 'react-router-dom';
 
 const Watches = ({watches}) => {
   const settings = {
@@ -13,6 +14,7 @@ const Watches = ({watches}) => {
     slidesToShow: 4,
     slidesToScroll: 1
   };
+  const nav = useNavigate();
   return (
     <div ref={watches} className='mx-24 mt-24'>
     <div className='flex flex-row justify-between items-center'>
@@ -25,7 +27,7 @@ const Watches = ({watches}) => {
         return <div className=''>
           <div className='card'>
             <img  src={data['img-url']} />
-            <button className='cart-button '>ADD TO CART<i class="fa-solid fa-cart-shopping mr-4 py-[6px] ml-5" ></i></button>
+            <button className='cart-button ' onClick={() => nav(`/product/detail/${data._id}`)}>ADD TO CART<i class="fa-solid fa-cart-shopping mr-4 py-[6px] ml-5" ></i></button>
           </div>
           <div className='flex flex-row justify-between mt-3 text-2xl'>
             <p>{data.name}</p>

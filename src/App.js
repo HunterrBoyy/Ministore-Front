@@ -6,6 +6,10 @@ import UserRoute from './components/UserRoute'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header'
+import RouteUser from './components/RouteUser'
+import ProductDetail from './pages/UserPage/ProductDetail'
+import CartPage from './pages/UserPage/CartPage'
+import OrderPage from './pages/UserPage/OrderPage'
 
 
 const App = () => {
@@ -22,13 +26,15 @@ const App = () => {
           <Route path="user/SignUp" element={<SignUp />} />
         </Route>
 
-        {/* <Route element={<RouteUser />}>
+        {/* <Route path="product/detail/:id" element={<ProductDetail />} /> */}
+
+        <Route element={<RouteUser />}>
             <Route path='user/cart' element={<CartPage />} />
-            <Route path='user/shipping' element={<Shipping />} />
+            
             <Route path='/user/checkout' element={<OrderPage />} />
-            <Route path='/user/profile' element={<UserProfile />} />
-            <Route path='/user/order/:id' element={<OrderDetail />} />
-          </Route> */}
+            {/* <Route path='/user/profile' element={<UserProfile />} />
+            <Route path='/user/order/:id' element={<OrderDetail />} /> */}
+          </Route>
 
        
       </Routes>
@@ -36,7 +42,6 @@ const App = () => {
      
      
      <ToastContainer autoClose={1000} position='top-right' />
-     
       
     </>
   )
