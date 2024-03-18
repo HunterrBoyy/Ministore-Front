@@ -3,7 +3,7 @@ import React from 'react'
 const Footer = () => {
   return (
     <div  className='mx-24 mt-24 '>
-      <div className='grid grid-cols-4 gap-7'>
+      <div className='md:grid md:grid-cols-4 sm:grid sm:grid-cols-2 grid gap-7'>
       <div>
         <h1 className='text-[30px]'>MiniStore.</h1>
         <p className='text-[#CBB6AE]'>Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. Gravida massa volutpat aenean odio erat nullam fringilla.</p>
@@ -64,7 +64,7 @@ const Footer = () => {
         <span  className='hover:text-blue-400'>+55 111 222 333 44</span>
       </div>
       </div>
-   <div className='grid grid-cols-3 mt-16'>
+   <div className='md:grid md:grid-cols-3 sm:grid sm:grid-cols-2 grid gap-3 mt-16'>
       <div className='flex gap-1'>
             We ship with: 
           <div><img src="https://themewagon.github.io/MiniStore/images/dhl.png" alt="" /> </div>

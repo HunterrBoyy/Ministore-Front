@@ -3,7 +3,7 @@ import { Card, Typography } from "@material-tailwind/react";
 import { baseUrl } from '../../features/constant';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addOrUpdateCart, removeCart } from '../../features/userSlice';
+import {  addOrUpdateCart, removeCart } from '../../features/userSlice';
 
 const CartPage = () => {
 

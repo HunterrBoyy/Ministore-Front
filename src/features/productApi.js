@@ -10,6 +10,13 @@ export const productApi = createApi({
   tagTypes:['product','order'],
   endpoints: (builder) => ({
 
+    getAllProducts: builder.query({
+      query: (query) => ({
+        url: '/api/products',
+      }),
+      providesTags: ['product', 'order']
+    }),
+
     getProductById : builder.query({
       query:(query) => ({
         url:`/api/product/${query}`,
@@ -54,27 +61,38 @@ export const productApi = createApi({
     }),
 
     getOrderById: builder.query({
-      query:(query)=>({
-        url:`/api/order/${query.id}`,
-        headers:{
+      query: (query) => ({
+        url: `/api/order/${query.id}`,
+        headers: {
           Authorization: query.token
         }
       }),
-      providesTags:['order']
+      providesTags: ['order']
     }),
 
     addOrder: builder.mutation({
-      query:(query) => ({
+      query: (query) => ({
         url: '/api/create-order',
         body: query.body,
-        headers:{
+        headers: {
           Authorization: query.token
         },
         method: 'POST'
       }),
-      invalidatesTags: ['order','product']
-    })
+      invalidatesTags: ['order', 'product']
+    }),
+
+    getOrderByUser: builder.query({
+      query: (query) => ({
+        url: `/api/order/user`,
+        headers: {
+          Authorization: query
+        }
+      }),
+      providesTags: ['order']
+    }),
+
   })
 })
 
-export const {useAddProductMutation, useGetAllOrdersQuery, useGetOrderByIdQuery, useGetProductByIdQuery, useUpdateProductMutation , useAddOrderMutation} = productApi
+export const {useGetAllProductsQuery,useAddProductMutation, useGetAllOrdersQuery, useGetOrderByIdQuery, useGetProductByIdQuery, useUpdateProductMutation , useAddOrderMutation, useGetOrderByUserQuery} = productApi

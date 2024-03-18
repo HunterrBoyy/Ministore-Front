@@ -1,10 +1,11 @@
 import React from 'react'
 import { Button } from "@material-tailwind/react";
 import { useDispatch, useSelector } from 'react-redux';
-import { useAddOrderMutation } from '../../features/productApi';
+
 import { useNavigate } from 'react-router-dom';
 import { clearCart } from '../../features/userSlice';
 import { toast } from 'react-toastify';
+import { useAddOrderMutation } from '../../features/productApi';
 
 const OrderPage = () => {
     const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const OrderPage = () => {
           token: user.token
         });
         dispatch(clearCart());
-        toast.success(`${response?.data}`);
+        toast.success(`Item bought`);
         nav('/',{replace: true});
       } catch (err) {
         toast.error(`${err?.data}`)

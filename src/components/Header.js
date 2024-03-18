@@ -13,7 +13,7 @@ import Footer from './Footer'
 
 const Header = () => {
 
-// yo page ma maile data haru backend bata tanera product ra watches ma data pathayera, data haru milauna baki xa 
+
   const nav = useNavigate()
   const dispatch = useDispatch()
   const [open, setOpen] = useState(false)
@@ -40,9 +40,10 @@ const blog = useRef(null);
   return (
     <>
     
-    <div className='flex flex-row justify-between px-10 py-5 bg-[#F8F9FA] sticky top-0 z-10'>
+    <div className='flex flex-row justify-between px-10 py-5 bg-[#F8F9FA] sticky top-0 z-10 '>
       <img src="https://themewagon.github.io/MiniStore/images/main-logo.png" alt="" />
-  <nav className='flex flex-row gap-8'>
+  <i class="fa-solid fa-bars  md:hidden "></i>
+  <nav className='md:flex md:flex-row md:gap-8 hidden '>
     <p className='cursor-pointer'  onClick={() => scrollToSection(home)}>HOME</p>
     <p className='cursor-pointer' onClick={() => scrollToSection(services)}>SERVICES</p>
     <p className='cursor-pointer' onClick={() => scrollToSection(products)}>PRODUCTS</p>
@@ -92,11 +93,17 @@ const blog = useRef(null);
         setPageOpen(false);
       }}
        className='p-2 text-lg cursor-pointer rounded hover:bg-blue-100 '> CONTACT</li>
+       <li 
+      onClick={() => {
+        setPageOpen(false);
+        nav('/product/add');
+      }}
+       className='p-2 text-lg cursor-pointer rounded hover:bg-blue-100 '> ADD PRODUCT</li>
     </ul>
    </div>)
    }
   </nav>
-  <div className='flex gap-5'>
+  <div className='md:flex md:gap-5  hidden '>
   <i class="fa-solid fa-magnifying-glass"></i>
   <div className='relative flex'>
  
@@ -110,7 +117,12 @@ const blog = useRef(null);
     ref={menuRef}
     className='bg-white p-0 w-32 shadow-lg absolute -left-10 top-8'>
     <ul>
-      <li onClick={() => setOpen(false)} className='p-2 text-lg cursor-pointer rounded hover:bg-blue-100 '>My Profile</li>
+      <li onClick={() => {
+        setOpen(false);
+        nav('/user/profile');
+      }
+    } 
+      className='p-2 text-lg cursor-pointer rounded hover:bg-blue-100 '>My Profile</li>
       <li 
       onClick={() => {
         setOpen(false);

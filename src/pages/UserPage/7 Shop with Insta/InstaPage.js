@@ -7,7 +7,7 @@ const InstaPage = () => {
     <div className='mx-24 mt-24 ' >
     
       <p className='font-medium text-[30px] flex justify-center'>SHOP OUR INSTA</p>
-    <div className='grid grid-cols-5 gap-2 mt-5'>
+    <div className='md:grid md:grid-cols-5 sm:grid sm:grid-cols-3 grid gap-2 mt-5'>
     {mixedProduct.map((data) => {
         return <div className='container '>
           <img  src={data['img-url']} className='h-64 w-56'/>

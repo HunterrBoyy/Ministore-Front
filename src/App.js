@@ -10,6 +10,9 @@ import RouteUser from './components/RouteUser'
 import ProductDetail from './pages/UserPage/ProductDetail'
 import CartPage from './pages/UserPage/CartPage'
 import OrderPage from './pages/UserPage/OrderPage'
+import UserProfile from './pages/UserPage/UserProfile'
+import OrderDetail from './pages/UserPage/OrderDetail'
+import AddProduct from './pages/UserPage/AddProduct'
 
 
 const App = () => {
@@ -26,14 +29,15 @@ const App = () => {
           <Route path="user/SignUp" element={<SignUp />} />
         </Route>
 
-        {/* <Route path="product/detail/:id" element={<ProductDetail />} /> */}
+        <Route path="product/detail/:id" element={<ProductDetail />} />
 
         <Route element={<RouteUser />}>
             <Route path='user/cart' element={<CartPage />} />
             
             <Route path='/user/checkout' element={<OrderPage />} />
-            {/* <Route path='/user/profile' element={<UserProfile />} />
-            <Route path='/user/order/:id' element={<OrderDetail />} /> */}
+            <Route path='/user/profile' element={<UserProfile />} />
+            <Route path='/user/order/:id' element={<OrderDetail />} />
+            <Route path="product/add" element={<AddProduct />} />
           </Route>
 
        
